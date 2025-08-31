@@ -208,7 +208,7 @@ sysctl net.ipv4.ip_local_port_range
 sysctl net.core.somaxconn
 #ethtool -i eth0 | grep driver
 oc whoami
-kube-burner-ocp
+kube-burner-ocp version
 ```
 
 > If you still hit 429s or runner-side socket errors, lower `--qps/--burst`, or add a second runner and split traffic across both (same commands, different UUIDs).
