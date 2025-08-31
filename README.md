@@ -206,9 +206,9 @@ mkdir -p "$KUBE_BURNER_METRICS_DIR"
 ulimit -n
 sysctl net.ipv4.ip_local_port_range
 sysctl net.core.somaxconn
-ethtool -i eth0 | grep driver
+#ethtool -i eth0 | grep driver
 oc whoami
-kube-burner-ocp --version
+kube-burner-ocp 
 ```
 
 > If you still hit 429s or runner-side socket errors, lower `--qps/--burst`, or add a second runner and split traffic across both (same commands, different UUIDs).
