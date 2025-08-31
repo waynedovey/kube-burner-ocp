@@ -1,0 +1,18 @@
+# metrics-endpoints.yaml
+metricsEndpoints:
+  - name: in-cluster-prom
+    type: prometheus
+    url: https://thanos-querier.openshift-monitoring.svc:9091
+    tokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
+    step: 30s
+    skipTLSVerify: true
+  - name: external-prom
+    type: prometheus
+    url: https://prom.your-domain.example/
+    bearerToken: ${PROM_TOKEN}
+    step: 30s
+    skipTLSVerify: false
+#remoteWrite:
+#  url: https://prom-remote-write.example.com/api/v1/write
+#  bearerToken: ${REMOTE_WRITE_TOKEN}
+#  insecureSkipVerify: false
