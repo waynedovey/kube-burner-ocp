@@ -1,7 +1,7 @@
 # Load Test Runbook: kube-burner-ocp `cluster-density-v2` on 5-node hosting pool (ALL NODES SCHEDULABLE)
 
 This README documents the exact steps to run **cluster-density-v2** with **kube-burner-ocp** when **all five hosting/HCP nodes are schedulable and accept workloads**.  
-We assume these five nodes are your Dell **R7625** boxes (each CPU-capped to ~96 vCPUs). This guide does **not** target your R660 masters.
+We assume these five nodes are your Dell **R7625** boxes (each CPU-capped to ~96 vCPUs). 
 
 > Because all 5 nodes are schedulable “for the moment”, **we do not pass any `--pod-node-selector` or `--pod-tolerations` flags**. The load will spread across the five nodes by the scheduler. If you later want to constrain placement, see the **Optional: Pin to specific nodes** section at the end.
 
